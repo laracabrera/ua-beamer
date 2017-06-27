@@ -8,7 +8,7 @@
 % UA page geometry
 % \geometry{paperheight=7.5in,paperwidth=10.0in}
 % ... Hang on! As suggested in the manual, don't mess around with beamer's
-% assumed page dimensions (128mm x 96mm). Fonts, for example, do no get 
+% assumed page dimensions (128mm x 96mm). Fonts, for example, do no get
 % automatically scaled and will look tiny if the above is executed.
 % Instead, define a multiplier 12.8/(10.0*2.54) = 64/127 and adjust all
 % respective lengths.
@@ -32,9 +32,9 @@
 \setlength{\margin}{0.8832cm}% 0.69in* 64/127 *2.54cm/in
 
 \newlength{\ulogowidth}
-\setlength{\ulogowidth}{1.1136cm}% 0.87in* 64/127 *2.54cm/in
+\setlength{\ulogowidth}{2.5cm}% 0.87in* 64/127 *2.54cm/in
 \newlength{\ulogoheight}
-\setlength{\ulogoheight}{0.90066895151709692cm}% 0.70364761837273193in* 64/127 *2.54cm/in
+\setlength{\ulogoheight}{1.238cm}% 0.70364761837273193in* 64/127 *2.54cm/in
 \ifbeamer@dark\else%
   \newlength{\ulogopadding}
   % padding = distance from the rightmost point of the logo to where the U starts;
@@ -49,7 +49,8 @@
 % ----------------------------------------------------------------------------
 % *** DEFINE IMAGES <<<
 % ----------------------------------------------------------------------------
-\pgfdeclareimage[width=\ulogowidth]{ULogo}{logo_UA_U_kl3}
+\pgfdeclareimage[width=\ulogowidth]{ULogo}{images/universidad-autonoma-madrid-variante}
+\pgfdeclareimage[width=1.2cm]{ULogoMini}{images/universidad-autonoma-madrid-variante}
 
 % The text logo is a bit of a special case:
 % As given in the PowerPoint(R) slides, the logo is 3.12''x0.36'', the picture file
@@ -58,22 +59,22 @@
 % The PDF that we use here does not have any margins, so adapt the sizes here.
 \newlength{\textlogoheight}
 \setlength{\textlogoheight}{0.37218461538461539cm}% 0.36in* 64/127 *2.54cm/in * 42px/52px
-\pgfdeclareimage[height=\textlogoheight]{uTextColor}{logo_UA_tekst_kl}
+\pgfdeclareimage[height=\textlogoheight]{uTextColor}{images/logo_UA_tekst_kl}
 
 \ifthenelse{ \boolean{beamer@dark} \OR \boolean{beamer@darktitle} }
 % then
-{\pgfdeclareimage[width=\paperwidth]{uaBackgroundDark}{uaBackgroundDarkBlue}}
+{\pgfdeclareimage[width=\paperwidth]{uaBackgroundDark}{images/uaBackgroundDarkBlue}}
 %else
 {}
 
 \ifbeamer@dark%
-  \pgfdeclareimage[width=\paperwidth]{uaBackgroundLight}{uaBackgroundLightBlue}
+  \pgfdeclareimage[width=\paperwidth]{uaBackgroundLight}{images/uaBackgroundLightBlue}
 \else%
   \newlength{\wavewidth}
   \setlength{\wavewidth}{11.6352cm}% 9.09in* 64/127 *2.54cm/in
   \newlength{\waveheight}
   \setlength{\waveheight}{0.7936cm}% 0.62in* 64/127 *2.54cm/in
-  \pgfdeclareimage[width=\wavewidth,height=\waveheight]{uWave}{uabottomwave}
+  \pgfdeclareimage[width=\wavewidth,height=\waveheight]{uWave}{images/uabottomwave}
 \fi
 % ----------------------------------------------------------------------------
 % *** END DEFINE IMAGES <<<
@@ -114,7 +115,7 @@
       \vskip5cm% TODO: get rid of this quirk
     }
     {%
-      \pgfuseimage{ULogo}%
+      \pgfuseimage{ULogoMini}%
     }
   }
 }
@@ -203,14 +204,15 @@
   \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
   % *** THEN *** dark footline
   {%
-    \pgftext[left,bottom,at=\uTextColorPosDark]{\pgfuseimage{uTextColor}}%
+    %\pgftext[left,bottom,at=\uTextColorPosDark]{\pgfuseimage{uTextColor}}%
     \pgftext[right,bottom,at=\posUlogoFoot]{\pgfuseimage{ULogo}}%
   }
   % *** ELSE *** light footline
   {%
      % conditionally put the ua text logo on the page
     \ifthenelse{\c@framenumber=1 \OR \NOT \boolean{beamer@compress}}
-    {\pgftext[left,bottom,at=\uTextColorPosLight]{\pgfuseimage{uTextColor}}}%
+    {%\pgftext[left,bottom,at=\uTextColorPosLight]{\pgfuseimage{uTextColor}}
+    }%
     {}%
 
     % bottom wave
@@ -234,7 +236,7 @@
 
 % ----------------------------------------------------------------------------
 % *** END of FOOTLINE >>>
-% ---------------------------------------------------------------------------- 
+% ----------------------------------------------------------------------------
 
 
 % ----------------------------------------------------------------------------

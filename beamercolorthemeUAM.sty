@@ -1,0 +1,71 @@
+% Copyright 2009 by Nico Schlömer
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\mode<presentation>
+
+
+% =========================================================================
+% Colores institucionales
+\definecolor{uamverde}{RGB}{0,177,64}
+\definecolor{uamgris}{RGB}{112,115,114}
+\definecolor{marroneps}{RGB}{154,114,73}
+% Alternativos
+\definecolor{uamverdeclaro}{RGB}{0,145,88}
+\definecolor{uamverdeoscuro}{RGB}{42,117,81}
+\definecolor{uamgrisclaro}{RGB}{192,193,197}
+\definecolor{uamgrisoscuro}{RGB}{156,157,160}
+
+
+% =========================================================================
+
+
+\ifbeamer@dark%
+
+  \setbeamercolor{structure}{fg=white}%
+  \setbeamercolor{normal text}{fg=white}%
+  \setbeamercolor{frametitle}{fg=white}%
+  \setbeamercolor{frame number in foot}{fg=uamverde}%
+
+  \setbeamercolor{frame number in head}{fg=white}%
+
+\else%
+
+  \setbeamercolor{structure}{fg=uamverde}%
+  \setbeamercolor{normal text}{fg=black}%
+  \setbeamercolor{frametitle}{fg=uamverde}%
+
+  \setbeamercolor{frame number in foot}{fg=white}%
+
+  \ifbeamer@darktitle%
+      \setbeamercolor{title}{fg=white}%
+      \setbeamercolor{subtitle}{fg=white}%
+  \else
+      \setbeamercolor{subtitle}{fg=uamgris}%
+  \fi
+
+\fi
+
+
+% =======================================================================
+% alert color
+\setbeamercolor{alerted text}{fg=marroneps}
+% =======================================================================
+
+% =======================================================================
+% blocks
+\setbeamercolor{block title}{use=structure,fg=white,bg=uamverde}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=marroneps}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=uamverde}
+
+\setbeamercolor{block body}        {fg=white,use=block title,bg=uamgrisoscuro}
+\setbeamercolor{block body alerted}{fg=uamverde,use=block title alerted,bg=marroneps}
+\setbeamercolor{block body example}{fg=uamverde,use=block title example,bg=uamverdeclaro}
+% =======================================================================
+
+
+\mode
+<all>

@@ -1,0 +1,52 @@
+\documentclass[pdflatex,compress]{beamer}
+
+%\usetheme[darktitle,framenumber,totalframenumber]{UniversiteitAntwerpen}
+\usetheme[darktitle,framenumber]{UAM}
+ %\setbeamertemplate{background}[grid][step=1cm]
+ %\beamertemplategridbackground{1}
+
+% Fonts. Use Auto 1, the official UA font.
+\usepackage{avant}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum}
+% \usepackage{fontspec,microtype}
+% \usepackage{unicode-math}
+% \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase, Numbers=Lining}
+% \setmainfont{auto1}
+% \setsansfont{auto1}
+% \setmathfont{XITS Math} % for math symbols, can be any other OpenType math font
+% \setmathfont[range=\mathup]  {auto1}
+% \setmathfont[range=\mathbfup]{auto1 Bold}
+% \setmathfont[range=\mathbfit]{auto1 Bold Italic}
+% \setmathfont[range=\mathit]  {auto1 Italic}
+%\fontfamily{phv}\fontseries{mc}\selectfont
+
+\usepackage{lipsum}
+
+\title{Plantilla Beamer Institucional}
+\subtitle{Universidad Aut\'{o}noma de Madrid}
+
+\author{Ra\'{u}l Lara-Cabrera}
+
+\begin{document}
+
+% ----------------------------------------------------------------------------
+% *** Titlepage <<<
+% ----------------------------------------------------------------------------
+\maketitle
+% ----------------------------------------------------------------------------
+% *** END of Titlepage >>>
+% ----------------------------------------------------------------------------
+
+\begin{frame}{Introduction}
+  \lipsum[1]
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Test block}
+    Test, test, test
+  \end{block}
+\end{frame}
+
+\end{document}
