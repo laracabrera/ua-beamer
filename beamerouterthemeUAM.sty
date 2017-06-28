@@ -59,7 +59,6 @@
 % The PDF that we use here does not have any margins, so adapt the sizes here.
 \newlength{\textlogoheight}
 \setlength{\textlogoheight}{0.37218461538461539cm}% 0.36in* 64/127 *2.54cm/in * 42px/52px
-\pgfdeclareimage[height=\textlogoheight]{uTextColor}{images/logo_UA_tekst_kl}
 
 \ifthenelse{ \boolean{beamer@dark} \OR \boolean{beamer@darktitle} }
 % then
@@ -209,11 +208,6 @@
   }
   % *** ELSE *** light footline
   {%
-     % conditionally put the ua text logo on the page
-    \ifthenelse{\c@framenumber=1 \OR \NOT \boolean{beamer@compress}}
-    {%\pgftext[left,bottom,at=\uTextColorPosLight]{\pgfuseimage{uTextColor}}
-    }%
-    {}%
 
     % bottom wave
     \pgftext[right,bottom,at=\uWavePos]{\pgfuseimage{uWave}}%
